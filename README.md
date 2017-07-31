@@ -25,7 +25,7 @@ This compose will give you:
 ## Geth
 - Check container logs: `sudo docker logs -f geth`
 - Start shell in the geth container: `sudo docker exec -it geth sh` 
-- Type folowing commands
+- Type following commands
   - List account: `geth --datadir=/root/.ethereum/devchain account list`
   - Run this command: `cat /root/.ethereum/devchain/keystore/*`
   - Backup the account somewhere safe. For example, I saved this block for my wallet (carefull, you can steal my coins with these info):
@@ -56,8 +56,8 @@ truffle test
 
 Now test our helloWord dapp
 - Navigate to the folder: `cd /dapp/helloWorld`
-- Test the contract against the testrpc mode: `truffle test --testrpc`
-- Test against our devchain node: `truffle test --devchain`
+- Test the contract against the testrpc mode: `truffle test --network testrpc`
+- Test against our devchain node: `truffle test --network devchain`
 
 ## Install guide
 ### Docker
@@ -79,4 +79,5 @@ chmod +x /usr/local/bin/docker-compose
 exit
 ```
 check docker-compose version `docker-compose version`
+
 [Back to Prerequisit](#prerequisit)
