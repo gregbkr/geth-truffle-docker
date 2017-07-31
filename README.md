@@ -59,6 +59,17 @@ Now test our helloWord dapp
 - Test the contract against the testrpc mode: `truffle test --testrpc`
 - Test against our devchain node: `truffle test --devchain`
 
+### Usefull Truffle commands
+- Access to truffle console: `truffle console --network devchain`
+  - `web3.fromWei(web3.eth.getBalance(web3.personal.listAccounts[0]))`
+  - `web3.personal.unlockAccount(web3.personal.listAccounts[0], "password", 150000);`
+- Send contract to devchain `truffle migrate --network devchain`
+  - See your contract adress: `Greeter.deployed()`
+  - Launch a new contract: `var greeter = Greeter.new("Hello gva")`
+  - `Greeter.at('0x5a2676_____YOUR_CONTRACT_ADRESS_____9e7fb42d').greet()`
+  - View balance: `web3.eth.getBalance(web3.personal.listAccounts[0]).toNumber()`
+  - Send transaction: `web3.eth.sendTransaction({from:web3.personal.listAccounts[0], to:'0x41df2990b4efd225f2bc12dd8b6455bf1c07ff6d', value: web3.toWei(10, "ether")})`
+
 ## Install guide
 ### Docker
 ```
